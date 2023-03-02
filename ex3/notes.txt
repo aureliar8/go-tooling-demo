@@ -1,0 +1,26 @@
+in Conf
+```go
+fxpprof.Pprof
+
+Pprof: fxpprof.Pprof{
+ 	Enabled: true,
+ 	Port:    8080,
+ },
+```
+
+in fx.Supply
+```
+fx.Annotate(conf, fx.As(new(fxpprof.Pprof)))
+```
+
+
+"github.com/cespare/xxhash/v2"
+
+go test -bench=BenchmarkSayHello .
+b.ReportAllocs()
+
+go test -bench=BenchmarkSayHello . 
+go install golang.org/x/perf/cmd/benchstat@latest
+
+
+go test -bench=BenchmarkSayHello -cpuprofile=bench_cpu.pprof .

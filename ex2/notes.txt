@@ -1,0 +1,8 @@
+```go
+ _ "net/http/pprof"
+
+go func() {
+ 	log.Printf("pprof endpoint listening at localhost:8080/debug/pprof/")
+ 	http.ListenAndServe("localhost:8080", nil)
+ }()
+```

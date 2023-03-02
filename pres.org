@@ -1,0 +1,50 @@
+* Go tooling for performant programs
+
+Idea: Improve performance of go program by identifying bottleneck quickly
+
+** The go profiler: pprof
+Mile-high idea:
+1) Enable the pprof collector of your program
+2) Gather pprof data from the running executable
+3) Explore the data in the web interface
+*** Example with a short live program (cpu)
+- Running a pprof of a short-live program
+  The stdlin way + with pkg/
+
+  -> See that part2 consumes most of the cpu 
+*** Example with a long-lived program  (cpu)
+- Running a pprof of a long lived program
+  The stdlib way + stelling
+
+  -> Unmarshal + http2 + gc but not md5 (and not name score?)
+
+  
+*** Other types of profiling
+  - Memory pprof used & allocated  
+  - Lock contention profiling ?
+  - Goroutine dump ?
+
+*** Trap: First, diagnose what's the bottleneck. Cf ex1 
+Cpu intensive logger ? 
+
+Performance impact of profiling
+
+** Benchmarks (CPU & memory allocation)
+Bench example, run -> ns/op
+Allocation ??
+Compare with a new version once
+
+// Run several times (golden bench)
+Differentiate with benchstat 
+
+integration with pprof 
+
+Sources:
+https://dave.cheney.net/high-performance-go-workshop/gophercon-2019.html
+https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/
+https://go.dev/blog/pprof
+https://github.com/DataDog/go-profiler-notes
+
+https://go.dev/doc/pgo
+https://go.dev/doc/diagnostics
+
