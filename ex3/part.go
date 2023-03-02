@@ -1,14 +1,13 @@
 package ex3
 
 import (
+	"crypto/md5"
 	"encoding/hex"
 	"fmt"
-
-	"github.com/cespare/xxhash/v2"
 )
 
 func nameHash(name string) string {
-	hasher := xxhash.New()
+	hasher := md5.New()
 	hash := hasher.Sum([]byte(name))
 	return hex.EncodeToString(hash)
 }

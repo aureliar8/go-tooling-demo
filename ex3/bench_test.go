@@ -16,7 +16,6 @@ func BenchmarkFoo(b *testing.B) {
 }
 
 func BenchmarkSayHello(b *testing.B) {
-
 	s := &server{}
 	for i := 0; i < b.N; i++ {
 		s.SayHello(context.Background(), &HelloRequest{
