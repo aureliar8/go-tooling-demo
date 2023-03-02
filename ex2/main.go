@@ -5,9 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"net/http"
-
-	_ "net/http/pprof"
 
 	grpc "google.golang.org/grpc"
 )
@@ -28,10 +25,6 @@ func (s *server) SayHello(ctx context.Context, in *HelloRequest) (*HelloReply, e
 }
 
 func main() {
-	go func() {
-		log.Printf("pprof endpoint listening at localhost:8080/debug/pprof/")
-		http.ListenAndServe("localhost:8080", nil)
-	}()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", 1234))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
