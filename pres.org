@@ -48,3 +48,5 @@ https://github.com/DataDog/go-profiler-notes
 https://go.dev/doc/pgo
 https://go.dev/doc/diagnostics
 
+GopherCon Europe 2022: Bill Kennedy - Practical Memory Profiling https://www.youtube.com/watch?v=6qAfkJGWsns
+
