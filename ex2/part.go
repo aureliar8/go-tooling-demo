@@ -24,3 +24,7 @@ func nameScore(name string) int {
 func formatReply(name string, hash string, score int) string {
 	return fmt.Sprintf("Hello %s. Your hash is %s and your score is %d", name, hash, score)
 }
+
+func setup()   {}
+func foo()     {}
+func cleanup() {}

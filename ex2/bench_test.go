@@ -1,4 +1,4 @@
-package ex3
+package main
 
 import (
 	context "context"
